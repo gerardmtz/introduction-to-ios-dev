@@ -16,6 +16,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.settingsView.hidden = YES;
+    self.settingsButton.alpha = 0.15;
     
 // ***** CUSTOM FONT SETUP *****
     
@@ -56,4 +58,72 @@
     self.label.text=[timeFormat stringFromDate:[NSDate date]];
 }
 
+- (IBAction)settings:(id)sender {
+    if (self.settingsView.hidden == YES)
+    {
+        self.settingsView.hidden = NO;
+        self.settingsButton.alpha = 1.0;
+        [self.settingsButton setTitle: @"Hide Settings" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.settingsView.hidden = YES;
+        self.settingsButton.alpha = 0.15;
+        [self.settingsButton setTitle: @"Show Settings" forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)backgroundSegCtrl:(id)sender {
+    
+    // Change background color using segment control
+    
+//    if (self.backgroundSeg.selectedSegmentIndex == 0)
+//    {
+//        self.backgroundImage.backgroundColor = [UIColor blackColor];
+//    }
+//    else if (self.backgroundSeg.selectedSegmentIndex == 1)
+//    {
+//        self.backgroundImage.backgroundColor = [UIColor greenColor];
+//    }
+//    else if (self.backgroundSeg.selectedSegmentIndex == 2)
+//    {
+//        self.backgroundImage.backgroundColor = [UIColor systemPinkColor];
+//    }
+    
+    // Change background with an image
+    
+    if (self.backgroundSeg.selectedSegmentIndex == 0)
+    {
+        self.backgroundImage.image = [UIImage imageNamed:@"Background3"];
+    }
+    else if (self.backgroundSeg.selectedSegmentIndex == 1)
+    {
+        self.backgroundImage.image = [UIImage imageNamed:@"Background1"];
+    }
+    else if (self.backgroundSeg.selectedSegmentIndex == 2)
+    {
+        self.backgroundImage.image = [UIImage imageNamed:@"Background2"];
+    }
+    
+}
+
+- (IBAction)clockColor:(id)sender {
+    
+    if (self.clockColorSeg.selectedSegmentIndex == 0)
+    {
+        self.label.textColor = [UIColor whiteColor];
+    }
+    else if (self.clockColorSeg.selectedSegmentIndex == 1)
+    {
+        self.label.textColor = [UIColor yellowColor];
+        
+    }
+    else if (self.clockColorSeg.selectedSegmentIndex == 2)
+    {
+        self.label.textColor = [UIColor redColor];
+    }
+    
+    
+    
+}
 @end
