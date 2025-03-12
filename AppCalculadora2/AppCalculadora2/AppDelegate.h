@@ -6,13 +6,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <math.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    double memoryValue;
+}
 
 @property (weak) IBOutlet NSTextField *display;
+
 - (IBAction)pressEqual:(id)sender;
+
 - (IBAction)pressOp:(id)sender;
+
 - (IBAction)pressDigit:(NSButton *)sender;
 
 @end
-
