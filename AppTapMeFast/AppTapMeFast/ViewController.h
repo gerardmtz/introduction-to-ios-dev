@@ -1,13 +1,13 @@
 //
 //  ViewController.h
-//  AppTapMeFast
+//  appTapMeFast
 //
-//  Created by geralduwu on 2025-03-10.
+//  Created by Sebastian on 10/03/25.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController{
     NSTimer *timer;
     
     int timeInt;
@@ -15,12 +15,10 @@
     int gameMode;
 }
 
-
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *scoreLable;
-
 - (IBAction)startGame:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 
 @end

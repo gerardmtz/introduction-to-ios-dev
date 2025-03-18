@@ -1,8 +1,8 @@
 //
 //  main.m
-//  AppTapMeFast
+//  appTapMeFast
 //
-//  Created by geralduwu on 2025-03-10.
+//  Created by Sebastian on 10/03/25.
 //
 
 #import <UIKit/UIKit.h>

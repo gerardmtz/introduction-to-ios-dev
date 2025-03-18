@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, OperationType) {
 @property (nonatomic, strong) NSMutableString *currentInput; // Usamos un NSMutableString para almacenar los dígitos
 @property (nonatomic, assign) double result;
 @property (nonatomic, assign) OperationType operation; // Usamos la enumeración para la operación
+
 @end
 
 @implementation AppDelegate
@@ -46,8 +47,70 @@ typedef NS_ENUM(NSInteger, OperationType) {
     return YES;
 }
 
+- (void)executeImmediateOperation:(OperationType)operation {
+    // Si hay un número en el input, lo actualizamos
+    if (self.currentInput.length > 0) {
+        self.result = [self.currentInput doubleValue];
+        [self.currentInput setString:@""];
+    }
+    
+    switch(operation) {
+        case OperationInverse:
+            if (self.result != 0) {
+                self.result = 1 / self.result;
+            } else {
+                self.display.stringValue = @"Error: División por cero";
+                return;
+            }
+            break;
+            
+        case OperationSin:
+            self.result = sin(self.result * M_PI / 180.0);
+            break;
+            
+        case OperationCos:
+            self.result = cos(self.result * M_PI / 180.0);
+            break;
+            
+        case OperationMemoryStore:
+            self->memoryValue = self.result;
+            break;
+            
+        case OperationMemoryRecall:
+            self.result = self->memoryValue;
+            break;
+            
+        case OperationMemoryAddition:
+            self->memoryValue += self.result;
+            break;
+            
+        case OperationClearAll:
+            self.result = 0;
+            [self.currentInput setString:@""];
+            self->memoryValue = 0;
+            break;
+            
+        default:
+            break;
+    }
+    
+    self.display.stringValue = [NSString stringWithFormat:@"%.2f", self.result];
+    [self.currentInput setString:@""];
+}
+
 - (IBAction)pressDigit:(NSButton *)sender {
     NSString *digit = sender.title;
+    
+    if ([digit isEqualToString:@"."]) {
+        if ([self.currentInput containsString:@"."]) {
+            return;
+        }
+        
+        if (self.currentInput.length == 0) {
+            [self.currentInput appendString:@"0"];
+        }
+    }
+    
     [self.currentInput appendString:digit];
     self.display.stringValue = self.currentInput;
 }
@@ -60,30 +123,56 @@ typedef NS_ENUM(NSInteger, OperationType) {
     
     // Asignamos la operación basada en el título del botón
     NSString *opTitle = [sender title];
-    if ([opTitle isEqualToString:@"+"]) {
-        self.operation = OperationTypeAddition;
-    } else if ([opTitle isEqualToString:@"-"]) {
-        self.operation = OperationTypeSubtraction;
-    } else if ([opTitle isEqualToString:@"x"]) {
-        self.operation = OperationTypeMultiplication;
-    } else if ([opTitle isEqualToString:@"/"]) {
-        self.operation = OperationTypeDivision;
-    } else if ([opTitle isEqualToString:@"√"]) {
-        self.operation = OperationTypeSquareRoot;
-    } else if ([opTitle isEqualToString:@"1/x"]) {
+    
+    if ([opTitle isEqualToString:@"1/x"]) {
         self.operation = OperationInverse;
-    } else if ([opTitle isEqualToString:@"MS"]) {
+    }
+    else if ([opTitle isEqualToString:@"MS"]) {
         self.operation = OperationMemoryStore;
-    } else if ([opTitle isEqualToString:@"MR"]) {
+    }
+    else if ([opTitle isEqualToString:@"MR"]) {
         self.operation = OperationMemoryRecall;
-    } else if ([opTitle isEqualToString:@"M+"]) {
+    }
+    else if ([opTitle isEqualToString:@"M+"]) {
         self.operation = OperationMemoryAddition;
-    } else if ([opTitle isEqualToString:@"C"]) {
+    }
+    else if ([opTitle isEqualToString:@"C"]) {
         self.operation = OperationClearAll;
+    }
+    else if ([opTitle isEqualToString:@"Sin"]) {
+        self.operation = OperationSin;
+    }
+    else if ([opTitle isEqualToString:@"Cos"]) {
+        self.operation = OperationCos;
+    }
+    else if ([opTitle isEqualToString:@"+"]) {
+        self.operation = OperationTypeAddition;
+    }
+    else if ([opTitle isEqualToString:@"-"]) {
+        self.operation = OperationTypeSubtraction;
+    }
+    else if ([opTitle isEqualToString:@"x"]) {
+        self.operation = OperationTypeMultiplication;
+    }
+    else if ([opTitle isEqualToString:@"/"]) {
+        self.operation = OperationTypeDivision;
+    }
+    else if ([opTitle isEqualToString:@"√"]) {
+        self.operation = OperationTypeSquareRoot;
+    }
+    
+    // Ejecutamos las operaciones inmediatas
+    if (self.operation == OperationInverse ||
+        self.operation == OperationMemoryRecall ||
+        self.operation == OperationMemoryAddition ||
+        self.operation == OperationClearAll ||
+        self.operation == OperationSin ||
+        self.operation == OperationCos)
+    {
+        [self executeImmediateOperation:self.operation];
     }
     
     NSLog(@"Título del botón: '%@', operación asignada: %ld", opTitle, (long)self.operation);
-
 }
 
 - (IBAction)pressEqual:(id)sender {
@@ -117,34 +206,6 @@ typedef NS_ENUM(NSInteger, OperationType) {
                 return;
             }
             break;
-        case OperationInverse:
-            if (self.result != 0) {
-                self.result = 1 / self.result;
-            } else {
-                self.display.stringValue = @"Error: División por cero";
-                return;
-            }
-            break;
-        case OperationSin:
-            self.result = sin(self.result);
-            break;
-        case OperationCos:
-            self.result = cos(self.result);
-            break;
-        case OperationMemoryStore:
-            self->memoryValue = self.result;
-            break;
-        case OperationMemoryRecall:
-            self.result = self->memoryValue;
-            break;
-        case OperationMemoryAddition:
-            self->memoryValue += self.result;
-            break;
-        case OperationClearAll:
-            self.result = 0;
-            [self.currentInput setString:@""];
-            self->memoryValue = 0;
-            break;
         default:
             NSLog(@"Operación no válida");
             break;
@@ -153,6 +214,5 @@ typedef NS_ENUM(NSInteger, OperationType) {
     self.display.stringValue = [NSString stringWithFormat:@"%.2f", self.result];
     [self.currentInput setString:@""];
 }
-
 
 @end
