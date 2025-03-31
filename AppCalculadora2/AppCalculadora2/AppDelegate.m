@@ -35,6 +35,10 @@ typedef NS_ENUM(NSInteger, OperationType) {
 
 @implementation AppDelegate
 
+-(void) viewDidLoad {
+    memoryValue = 0;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.currentInput = [NSMutableString string];
     self.result = 0;
@@ -53,6 +57,8 @@ typedef NS_ENUM(NSInteger, OperationType) {
         self.result = [self.currentInput doubleValue];
         [self.currentInput setString:@""];
     }
+    
+//    NSLog(@"%d", operation);
     
     switch(operation) {
         case OperationInverse:
@@ -73,7 +79,9 @@ typedef NS_ENUM(NSInteger, OperationType) {
             break;
             
         case OperationMemoryStore:
-            self->memoryValue = self.result;
+//            self->memoryValue = self.result;
+//            break;
+            self->memoryValue += self.result;
             break;
             
         case OperationMemoryRecall:
@@ -163,6 +171,7 @@ typedef NS_ENUM(NSInteger, OperationType) {
     
     // Ejecutamos las operaciones inmediatas
     if (self.operation == OperationInverse ||
+        self.operation == OperationMemoryStore ||
         self.operation == OperationMemoryRecall ||
         self.operation == OperationMemoryAddition ||
         self.operation == OperationClearAll ||
