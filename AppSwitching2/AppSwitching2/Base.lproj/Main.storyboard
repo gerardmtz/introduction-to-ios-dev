@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,27 +15,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-Jo-YmM">
-                                <rect key="frame" x="147" y="203" width="100" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Ir a vista 1"/>
-                                <connections>
-                                    <segue destination="yDW-hh-7tj" kind="show" id="88Y-1f-MuJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-LS-cKs">
-                                <rect key="frame" x="146" y="275" width="102" height="35"/>
+                                <rect key="frame" x="221" y="682" width="144" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Ir a vista 2"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Ir a vista 2">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                    <color key="baseBackgroundColor" red="0.76245790719999995" green="0.74210399390000004" blue="0.75356620549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="6yK-gA-rx9" kind="presentation" id="8Ub-9k-Gza"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-Jo-YmM">
+                                <rect key="frame" x="29" y="682" width="134" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Ir a vista 1">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                    <color key="baseBackgroundColor" red="0.76245790719999995" green="0.74210399390000004" blue="0.75356620549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="yDW-hh-7tj" kind="show" id="88Y-1f-MuJ"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10-image" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-TY-pxd">
+                                <rect key="frame" x="16" y="256" width="361" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qsm-BX-ote"/>
                 </viewController>
@@ -53,23 +62,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdr-Px-SBr">
-                                <rect key="frame" x="145" y="397" width="103" height="35"/>
+                                <rect key="frame" x="95" y="703" width="202" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Ir a vista 3"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Ir a vista 3">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                    <color key="baseBackgroundColor" red="0.76245790719999995" green="0.74210399390000004" blue="0.75356620549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="ajp-Gz-gF3" kind="show" id="bqU-Xo-iCX"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6-image" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-sA-4cr">
+                                <rect key="frame" x="-15" y="103" width="423" height="592"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ltq-Kc-NxW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y2e-oB-STX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipf-me-cZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="651"/>
+            <point key="canvasLocation" x="-906.10687022900754" y="650.70422535211276"/>
         </scene>
         <!--Vista Dos View Controller-->
         <scene sceneID="Vqn-2q-WxV">
@@ -80,17 +96,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6v-qD-Fch">
-                                <rect key="frame" x="104" y="147" width="184" height="45"/>
+                                <rect key="frame" x="83" y="693" width="226" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Atrás"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Atrás">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                    <color key="baseBackgroundColor" red="0.76245790719999995" green="0.74210399390000004" blue="0.75356620549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="goBack:" destination="6yK-gA-rx9" eventType="touchUpInside" id="MlX-oM-fHT"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7- image" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-r5-sX8">
+                                <rect key="frame" x="-2" y="0.0" width="406" height="735"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xTd-Cl-42J"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="6FA-TX-ZqU"/>
                 </viewController>
@@ -105,8 +129,14 @@
                     <view key="view" contentMode="scaleToFill" id="M24-JF-IQy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8-image" translatesAutoresizingMaskIntoConstraints="NO" id="xks-06-dAH">
+                                <rect key="frame" x="0.0" y="-82" width="393" height="955"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsc-Gg-8nd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="m5y-et-KVK"/>
                 </viewController>
@@ -134,8 +164,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="10-image" width="313" height="378"/>
+        <image name="6-image" width="198" height="283"/>
+        <image name="7- image" width="194" height="280"/>
+        <image name="8-image" width="194" height="280"/>
     </resources>
 </document>

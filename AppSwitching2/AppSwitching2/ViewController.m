@@ -16,31 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self playBackroungMusic];
-    
-/*
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"vacations-young-instrumental" ofType:@"mp3"];
-    
-    if (path) {
-        NSURL *soundURL = [NSURL fileURLWithPath:path];
-        
-        NSError *error;
-        
-        self.audioPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-        
-        if (self.audioPlayer) {
-            
-            [self.audioPlayer prepareToPlay];
-            
-        } else {
-            
-            NSLog(@"Error al inicializar el AVAudioPlayer: %@", [error localizedDescription]);
-        }
-        
-    } else {
-        NSLog(@"No se encontro el archivo de sonido");
-    }
-*/
-    
 }
 
 - (void) playBackroungMusic {
