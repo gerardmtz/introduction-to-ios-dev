@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "MacWindowView.h"
 
 @interface ViewController ()
 
@@ -15,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor darkGrayColor]; // Example background
     [self playBackroungMusic];
+    [self renderMacWindowView];
 }
 
 - (void) playBackroungMusic {
@@ -31,6 +34,31 @@
         self.audioPlayer.numberOfLoops = -1; // play on loop, change to 0 to play only one time
         [self.audioPlayer play];
     }
+}
+
+- (void) renderMacWindowView {
+    CGRect windowFrame = CGRectMake(50, 100, 300, 250); // Example frame
+    MacWindowView *macWindow = [[MacWindowView alloc] initWithFrame:windowFrame title:@"My Image"];
+    
+    [self.view addSubview:macWindow]; // Add it to your view controller's view
+
+    // --- Add your actual content (e.g., an UIImageView) to the contentAreaView ---
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"your_image_name"]]; // Replace with your image
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    // Add the imageView to the window's content area
+    [macWindow.contentAreaView addSubview:imageView];
+
+    // Constrain the imageView within the contentAreaView (example: centered with padding)
+    CGFloat padding = 10.0;
+    [NSLayoutConstraint activateConstraints:@[
+        [imageView.topAnchor constraintEqualToAnchor:macWindow.contentAreaView.topAnchor constant:padding],
+        [imageView.leadingAnchor constraintEqualToAnchor:macWindow.contentAreaView.leadingAnchor constant:padding],
+        [imageView.trailingAnchor constraintEqualToAnchor:macWindow.contentAreaView.trailingAnchor constant:-padding],
+        [imageView.bottomAnchor constraintEqualToAnchor:macWindow.contentAreaView.bottomAnchor constant:-padding]
+    ]];
+    
 }
 
 @end

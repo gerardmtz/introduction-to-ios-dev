@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,13 +40,9 @@
                                     <segue destination="yDW-hh-7tj" kind="show" id="88Y-1f-MuJ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10-image" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-TY-pxd">
-                                <rect key="frame" x="16" y="256" width="361" height="404"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="qsm-BX-ote"/>
                 </viewController>
@@ -73,13 +70,9 @@
                                     <segue destination="ajp-Gz-gF3" kind="show" id="bqU-Xo-iCX"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6-image" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-sA-4cr">
-                                <rect key="frame" x="-15" y="103" width="423" height="592"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ltq-Kc-NxW"/>
-                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y2e-oB-STX"/>
                 </viewController>
@@ -107,13 +100,9 @@
                                     <action selector="goBack:" destination="6yK-gA-rx9" eventType="touchUpInside" id="MlX-oM-fHT"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7- image" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-r5-sX8">
-                                <rect key="frame" x="-2" y="0.0" width="406" height="735"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xTd-Cl-42J"/>
-                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="tintColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="6FA-TX-ZqU"/>
@@ -129,14 +118,8 @@
                     <view key="view" contentMode="scaleToFill" id="M24-JF-IQy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8-image" translatesAutoresizingMaskIntoConstraints="NO" id="xks-06-dAH">
-                                <rect key="frame" x="0.0" y="-82" width="393" height="955"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsc-Gg-8nd"/>
-                        <color key="backgroundColor" red="0.94788950679999995" green="0.88797289130000001" blue="0.75753873589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="m5y-et-KVK"/>
                 </viewController>
@@ -164,9 +147,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="10-image" width="313" height="378"/>
-        <image name="6-image" width="198" height="283"/>
-        <image name="7- image" width="194" height="280"/>
-        <image name="8-image" width="194" height="280"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
