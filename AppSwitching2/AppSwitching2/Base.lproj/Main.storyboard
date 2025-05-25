@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">For example, webcore includes. Low-end graphics. HTML aid
 Ul elements from old OS.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,10 +53,14 @@ Ul elements from old OS.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Webcore is an aesthetic inspired by internet art,
 and childhood memories of the early World Wide Web.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="webcore" translatesAutoresizingMaskIntoConstraints="NO" id="JTB-gt-GxD">
+                                <rect key="frame" x="23" y="60" width="348" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,12 +92,16 @@ and childhood memories of the early World Wide Web.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weirdcore features surreal, distorted images with nostalgic dream-like qualities" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00m-vX-haj">
-                                <rect key="frame" x="23" y="356" width="353" height="277"/>
+                                <rect key="frame" x="20" y="385" width="353" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weirdcore" translatesAutoresizingMaskIntoConstraints="NO" id="P2T-0V-bes">
+                                <rect key="frame" x="18" y="117" width="359" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ltq-Kc-NxW"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,6 +132,19 @@ and childhood memories of the early World Wide Web.</string>
                                     <action selector="goBack:" destination="6yK-gA-rx9" eventType="touchUpInside" id="MlX-oM-fHT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-mq-4rx">
+                                <rect key="frame" x="34" y="451" width="324" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Japanese Internet culture embraces pixel art,
+emoticons and community driven forums.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="japanese-internet" translatesAutoresizingMaskIntoConstraints="NO" id="rpp-vG-odv">
+                                <rect key="frame" x="16" y="81" width="361" height="380"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xTd-Cl-42J"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,6 +163,30 @@ and childhood memories of the early World Wide Web.</string>
                     <view key="view" contentMode="scaleToFill" id="M24-JF-IQy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC8-DY-bp5">
+                                <rect key="frame" x="16" y="345" width="361" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Frutiger Aero is a characterized by
+vibrant colors, shiny graphics, and
+bubbly aesthetics</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sag-4m-fnk">
+                                <rect key="frame" x="16" y="477" width="361" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Frutiger Aero is now viewed nostalgically as part of a "retro-futuristic" visual culture. It’s the visual memory of the 2000s’ optimism about technology and nature coexisting.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frutiger-aero" translatesAutoresizingMaskIntoConstraints="NO" id="dhj-pS-cOB">
+                                <rect key="frame" x="16" y="103" width="361" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsc-Gg-8nd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -170,4 +215,10 @@ and childhood memories of the early World Wide Web.</string>
             <point key="canvasLocation" x="70.992366412213741" y="-85.211267605633807"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frutiger-aero" width="1024" height="768"/>
+        <image name="japanese-internet" width="736" height="552"/>
+        <image name="webcore" width="640" height="480"/>
+        <image name="weirdcore" width="755" height="1007"/>
+    </resources>
 </document>
