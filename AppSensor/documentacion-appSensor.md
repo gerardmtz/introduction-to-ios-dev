@@ -29,10 +29,11 @@ Se importa el encabezado correspondiente a este controlador de vista.
     [self updateSensorStatus];
 
     // Registra una notificación para detectar cambios en el estado del sensor
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(proximityStateDigChange:)
-                                                 name:UIDeviceProximityStateDidChangeNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] 
+        addObserver:self
+        selector:@selector(proximityStateDigChange:)
+        name:UIDeviceProximityStateDidChangeNotification
+        object:nil];
 
     NSLog(@"Proximity monitoring enabled");
 }
@@ -55,8 +56,8 @@ Este método:
     // Deshabilita el sensor y elimina el observador
     [UIDevice currentDevice].proximityMonitoringEnabled = NO;
     [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIDeviceProximityStateDidChangeNotification
-                                                  object:nil];
+        name:UIDeviceProximityStateDidChangeNotification
+        object:nil];
 
     NSLog(@"Proximity monitoring disabled");
 }
