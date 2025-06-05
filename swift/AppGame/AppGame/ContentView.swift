@@ -210,6 +210,19 @@ class GameScene: ObservableObject {
         laserSoundPlayer.playSound(named: "laser_fire", ofType: "mp3")
     }
 
+    func moveShip(to newX: CGFloat) {
+        guard isGameActive else { return }
+        
+        // Use half the spaceship's width (font size 60 / 2) for clamping
+        let halfShipWidth = CGFloat(30)
+        
+        // Clamp the position to keep the ship within the screen bounds
+        spaceshipPosition.x = max(
+            halfShipWidth,
+            min(newX, gameWidth - halfShipWidth)
+        )
+    }
+
     // MARK: - Spawn Asteroid
     private func spawnAsteroid() {
         guard isGameActive else { return }
@@ -228,7 +241,6 @@ class GameScene: ObservableObject {
 // MARK: - ContentView
 struct ContentView: View {
     @StateObject private var gameScene = GameScene()
-    @State private var gameAreaSize: CGSize = .zero
 
     var body: some View {
         GeometryReader { geometry in
@@ -237,7 +249,7 @@ struct ContentView: View {
                 Color.black
                     .edgesIgnoringSafeArea(.all)
 
-                // Spaceship (fixed at bottom)
+                // Spaceship (now movable)
                 Image(systemName: "airplane")
                     .font(.system(size: 60))
                     .foregroundColor(.white)
@@ -321,12 +333,17 @@ struct ContentView: View {
                     width: geometry.size.width,
                     height: geometry.size.height
                 )
-                gameAreaSize = geometry.size
             }
             .gesture(
-                TapGesture().onEnded { _ in
-                    gameScene.fireLaser()
-                }
+                DragGesture(minimumDistance: 0)
+                    .onChanged { value in
+                        // Move the ship by tracking the finger's x-position
+                        gameScene.moveShip(to: value.location.x)
+                    }
+                    .onEnded { _ in
+                        // Fire a laser when the drag gesture ends (finger is lifted)
+                        gameScene.fireLaser()
+                    }
             )
         }
     }
